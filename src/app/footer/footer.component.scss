@@ -1,0 +1,18 @@
+footer {
+  max-width: 1440px;
+  height: 88px;
+  padding: 0 72px;
+  margin: 100px auto 0;
+  line-height: 88px;
+  background: #1f1f1f;
+  color: #fff;
+  .footer-container {
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

@@ -1,0 +1,64 @@
+.main-menu {
+  display: flex;
+  align-items: center;
+
+  .menu {
+    display: flex;
+    flex-direction: row;
+    padding: 30px 0 26px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    list-style: none;
+
+    &__item {
+      margin: 0 24px;
+
+      a {
+        position: relative;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+
+        &::after {
+          content: '';
+          position: absolute;
+          height: 2px;
+          width: 0;
+          display: block;
+          left: 50%;
+          transform: translate(-50%);
+          background: #060606;
+          transition: width .5s;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .button {
+    display: inline-table;
+    width: fit-content;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: 600;
+
+    &.button-black {
+      padding: 6px 33px 6px;
+      border: 2px solid black;
+      color: black;
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        background-color: black;
+        color: white;
+      }
+    }
+  }
+}
+
+
+
+
