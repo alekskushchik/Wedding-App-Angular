@@ -15,8 +15,8 @@ import { CoachesComponent } from './main/coaches/coaches.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { OwlCarouselComponent } from './main/owl-carousel/owl-carousel.component';
 import { CoachesSliderComponent } from './main/coaches/coaches-slider/coaches-slider.component';
+import { ServicesSliderComponent } from './main/services/services-slider/services-slider.component';
 
 @NgModule({
   declarations: [
@@ -30,8 +30,8 @@ import { CoachesSliderComponent } from './main/coaches/coaches-slider/coaches-sl
     ServicesComponent,
     OffersComponent,
     CoachesComponent,
-    OwlCarouselComponent,
-    CoachesSliderComponent
+    CoachesSliderComponent,
+    ServicesSliderComponent
   ],
   imports: [
     BrowserModule,

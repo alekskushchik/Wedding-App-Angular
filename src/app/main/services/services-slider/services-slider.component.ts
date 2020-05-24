@@ -1,12 +1,13 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {OwlOptions} from 'ngx-owl-carousel-o';
 
+
 @Component({
-  selector: 'app-owl-carousel',
-  templateUrl: './owl-carousel.component.html',
-  styleUrls: ['./owl-carousel.component.scss']
+  selector: 'app-services-slider',
+  templateUrl: './services-slider.component.html',
+  styleUrls: ['./services-slider.component.scss']
 })
-export class OwlCarouselComponent implements OnInit {
+export class ServicesSliderComponent implements OnInit {
 
   customOptions: OwlOptions = {
     loop: true,
@@ -33,8 +34,7 @@ export class OwlCarouselComponent implements OnInit {
     nav: false
   };
 
-  constructor() {
-  }
+  constructor() { }
 
   ngOnInit(): void {
   }
