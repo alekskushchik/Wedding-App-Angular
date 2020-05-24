@@ -1,11 +1,9 @@
 <div class="main-menu">
   <nav>
     <ul class="menu">
-      <li class="menu__item"><a href="">Services</a></li>
-      <li class="menu__item"><a href="">Our Coaches</a></li>
-      <li class="menu__item"><a href="">Testimonials</a></li>
-      <li class="menu__item"><a href="">FAQ</a></li>
-      <li class="menu__item"><a href="">Lesson Review</a></li>
+      <li *ngFor="let item of items" class="menu__item">
+        <a [href]="item.link">{{item.title}}</a>
+      </li>
     </ul>
   </nav>
   <a class="button button-black" href="#">Start</a>
