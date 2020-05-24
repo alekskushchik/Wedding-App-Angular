@@ -1,5 +1,4 @@
 footer {
-  max-width: 1440px;
   height: 88px;
   padding: 0 72px;
   margin: 100px auto 0;
@@ -7,7 +6,9 @@ footer {
   background: #1f1f1f;
   color: #fff;
   .footer-container {
+    max-width: 1440px;
     height: 100%;
+    margin: 0 auto;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
