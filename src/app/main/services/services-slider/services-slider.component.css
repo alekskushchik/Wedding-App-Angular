@@ -1,0 +1,33 @@
+.slide {
+  width: 420px;
+  height: 640px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 30px rgba(207, 207, 207, 0.25);
+  box-sizing: border-box;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+}
+.slide__content {
+  padding: 24px 40px;
+}
+.slide__content h2 {
+  margin-bottom: 24px;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 0.93;
+}
+.slide__content a {
+  margin-bottom: 8px;
+  display: block;
+  font-size: 16px;
+  line-height: 1.53;
+  text-decoration: none;
+  color: #000;
+}
+.slide__content a:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=services-slider.component.css.map */

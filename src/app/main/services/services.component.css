@@ -1,0 +1,16 @@
+.section {
+  position: relative;
+  margin-top: 100px;
+}
+.section__title {
+  font-size: 36px;
+  font-weight: 600;
+}
+.section__description {
+  max-width: 668px;
+  margin-top: 24px;
+  margin-bottom: 48px;
+  line-height: 1.5;
+}
+
+/*# sourceMappingURL=services.component.css.map */

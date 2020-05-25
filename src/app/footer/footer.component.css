@@ -1,0 +1,21 @@
+footer {
+  height: 88px;
+  padding: 0 72px;
+  margin: 100px auto 0;
+  line-height: 88px;
+  background: #1f1f1f;
+  color: #fff;
+}
+footer .footer-container {
+  max-width: 1296px;
+  height: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*# sourceMappingURL=footer.component.css.map */

@@ -1,0 +1,57 @@
+.slide {
+  margin: 0 8px;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
+  box-shadow: 0 4px 30px rgba(207, 207, 207, 0.25);
+  border-radius: 2px;
+}
+.slide__content {
+  margin: 43px 0;
+  padding-left: 33px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.slide__content div:first-child h2 {
+  margin: 8px auto;
+  font-size: 24px;
+  font-weight: 600;
+}
+.slide__content div:first-child h3 {
+  margin: 8px auto;
+  font-size: 16px;
+  font-weight: 600;
+}
+.slide__content div:first-child p {
+  margin: 8px auto;
+}
+.slide__content div:nth-child(2) {
+  margin-bottom: 88px;
+}
+.slide__content div:nth-child(2) p {
+  color: #717171;
+}
+.slide__content div:nth-child(2) p span {
+  color: black;
+}
+.slide__content .button {
+  display: inline-table;
+  width: fit-content;
+  border-radius: 3px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.slide__content .button.button-red {
+  padding: 6px 33px 6px;
+  border: 2px solid #FF699F;
+  color: #FF699F;
+  transition: 0.3s ease-in-out;
+}
+.slide__content .button.button-red:hover {
+  background-color: #FF699F;
+  color: white;
+}
+
+/*# sourceMappingURL=coaches-slider.component.css.map */

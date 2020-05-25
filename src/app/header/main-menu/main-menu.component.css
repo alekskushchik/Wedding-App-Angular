@@ -1,0 +1,54 @@
+.main-menu {
+  display: flex;
+  align-items: center;
+}
+.main-menu .menu {
+  display: flex;
+  flex-direction: row;
+  padding: 30px 0 26px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  list-style: none;
+}
+.main-menu .menu__item {
+  margin: 0 24px;
+}
+.main-menu .menu__item a {
+  position: relative;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+}
+.main-menu .menu__item a::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0;
+  display: block;
+  left: 50%;
+  transform: translate(-50%);
+  background: #060606;
+  transition: width 0.5s;
+}
+.main-menu .menu__item a:hover::after {
+  width: 100%;
+}
+.main-menu .button {
+  display: inline-table;
+  width: fit-content;
+  border-radius: 3px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.main-menu .button.button-black {
+  padding: 6px 33px 6px;
+  border: 2px solid black;
+  color: black;
+  transition: 0.3s ease-in-out;
+}
+.main-menu .button.button-black:hover {
+  background-color: black;
+  color: white;
+}
+
+/*# sourceMappingURL=main-menu.component.css.map */

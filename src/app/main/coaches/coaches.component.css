@@ -1,0 +1,58 @@
+.section {
+  position: relative;
+  margin-top: 100px;
+}
+.section__title {
+  font-size: 36px;
+  font-weight: 600;
+}
+.section__description {
+  max-width: 668px;
+  margin-top: 24px;
+  margin-bottom: 48px;
+  line-height: 1.5;
+}
+
+.slider {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 30px rgba(207, 207, 207, 0.25);
+}
+.slider__item {
+  position: relative;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+}
+
+.content {
+  padding: 43px 33px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  line-height: 1;
+}
+.content :first-child h2 {
+  margin-top: 8px;
+  font-size: 24px;
+  font-weight: 600;
+}
+.content :first-child h3 {
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.content :first-child p {
+  margin: 8px 0;
+}
+.content :nth-child(2) p {
+  padding-top: 16px;
+  color: #717171;
+}
+.content :nth-child(2) span {
+  color: black;
+}
+
+/*# sourceMappingURL=coaches.component.css.map */
