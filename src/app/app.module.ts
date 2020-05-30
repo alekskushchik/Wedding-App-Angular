@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 
@@ -12,11 +14,12 @@ import { HeroSectionComponent } from './main/hero-section/hero-section.component
 import { ServicesComponent } from './main/services/services.component';
 import { OffersComponent } from './main/offers/offers.component';
 import { CoachesComponent } from './main/coaches/coaches.component';
+import { CoachesSliderComponent } from './main/coaches/coaches-slider/coaches-slider.component';
+import { ServicesSliderComponent } from './main/services/services-slider/services-slider.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { CoachesSliderComponent } from './main/coaches/coaches-slider/coaches-slider.component';
-import { ServicesSliderComponent } from './main/services/services-slider/services-slider.component';
+import {GetDataService} from './services/get-data.service';
 
 @NgModule({
   declarations: [
@@ -35,10 +38,12 @@ import { ServicesSliderComponent } from './main/services/services-slider/service
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     CarouselModule
   ],
-  providers: [],
+  providers: [GetDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

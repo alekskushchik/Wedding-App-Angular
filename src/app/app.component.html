@@ -3,3 +3,6 @@
 <app-main></app-main>
 
 <app-footer></app-footer>
+
+<p *ngIf="!isLoading; else loading">{{sectionContent.title}}</p>
+<ng-template #loading>Loading...</ng-template>
