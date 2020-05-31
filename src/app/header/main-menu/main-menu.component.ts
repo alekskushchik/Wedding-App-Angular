@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {GetDataService} from "../../services/get-data.service";
 
 @Component({
   selector: 'app-main-menu',
@@ -6,29 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-menu.component.scss']
 })
 export class MainMenuComponent implements OnInit {
-  items: { title: string, link: string }[] = [
-    {
-      title: 'Services',
-      link: '#services'
-    },
-    {
-      title: 'Our Coaches',
-      link: '#ourcoaches'
-    },
-    {
-      title: 'Testimonials',
-      link: '#testimonials'
-    },
-    {
-      title: 'FAQ',
-      link: '#faq'
-    },
-    {
-      title: 'Lesson Review',
-      link: '#lessonreview'
-    }
-  ];
-  constructor() { }
+  public navigationSection;
+  public items;
+
+  constructor(private getDataService: GetDataService) {
+    this.navigationSection = this.getDataService.navigationSection;
+    this.items = this.navigationSection.content;
+  }
 
   ngOnInit(): void {
   }

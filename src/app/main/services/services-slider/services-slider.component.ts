@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {OwlOptions} from 'ngx-owl-carousel-o';
+import { OwlOptions } from 'ngx-owl-carousel-o';
+import {GetDataService} from "../../../services/get-data.service";
 
 
 @Component({
@@ -8,7 +9,8 @@ import {OwlOptions} from 'ngx-owl-carousel-o';
   styleUrls: ['./services-slider.component.scss']
 })
 export class ServicesSliderComponent implements OnInit {
-
+  public servicesSection;
+  public items;
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -25,7 +27,7 @@ export class ServicesSliderComponent implements OnInit {
         items: 2
       },
       740: {
-        items: 3
+        items: 2
       },
       940: {
         items: 3
@@ -34,7 +36,10 @@ export class ServicesSliderComponent implements OnInit {
     nav: false
   };
 
-  constructor() { }
+  constructor(private getDataService: GetDataService) {
+    this.servicesSection = this.getDataService.servicesSection;
+    this.items = this.servicesSection.content;
+  }
 
   ngOnInit(): void {
   }

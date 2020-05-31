@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {GetDataService} from '../../services/get-data.service';
 
 @Component({
   selector: 'app-offers',
@@ -6,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./offers.component.scss']
 })
 export class OffersComponent implements OnInit {
-
-  constructor() { }
+  public offersSection;
+  public items;
+  constructor(private getDataService: GetDataService) {
+    this.offersSection = this.getDataService.offersSection;
+    this.items = this.offersSection.content;
+  }
 
   ngOnInit(): void {
   }

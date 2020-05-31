@@ -2,7 +2,7 @@
   <nav>
     <ul class="menu">
       <li *ngFor="let item of items" class="menu__item">
-        <a [href]="item.link">{{item.title}}</a>
+        <a href=".{{item.url}}">{{item.title}}</a>
       </li>
     </ul>
   </nav>

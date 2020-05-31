@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { GetDataService } from "../../services/get-data.service";
 
 @Component({
   selector: 'app-services',
@@ -6,14 +7,12 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./services.component.scss']
 })
 export class ServicesComponent implements OnInit {
+  servicesSection;
 
-  title = 'Our services';
-  description = `We want to make your wedding day perfect that is why suggest a lot of options for dance:
-  not only for a bride and groom but for their friends and relatives`;
-
-  constructor() { }
+  constructor(private getDataService: GetDataService) {
+    this.servicesSection = this.getDataService.servicesSection;
+  }
 
   ngOnInit(): void {
   }
-
 }

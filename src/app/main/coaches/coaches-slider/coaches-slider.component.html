@@ -1,79 +1,19 @@
 <owl-carousel-o [options]="customOptions">
-  <ng-template carouselSlide>
+  <ng-template carouselSlide *ngFor="let item of items; index as i">
     <div class="slide">
       <div class="slide__image">
-        <img src="./assets/img/coach_1.jpg">
+        <img src="./assets/img/coach_{{i + 1}}.jpg">
       </div>
       <div class="slide__content">
         <div>
-          <h3>01</h3>
-          <h2>Ann Walker</h2>
-          <p>Dancer</p>
+          <h3>{{i + 1}}</h3>
+          <h2>{{item.name}}</h2>
+          <p>{{item.direction}}</p>
         </div>
         <div>
-          <p>Work experience <span>8 years</span></p>
-          <p>Teacher for <span>3 years</span></p>
-          <p>Style <span>Viennese Waltz, Salsa</span></p>
-        </div>
-        <a class="button button-red" href="#">Let's start</a>
-      </div>
-    </div>
-  </ng-template>
-  <ng-template carouselSlide>
-    <div class="slide">
-      <div class="slide__image">
-        <img src="./assets/img/coach_2.jpg">
-      </div>
-      <div class="slide__content">
-        <div>
-          <h3>02</h3>
-          <h2>Tom Wilspon</h2>
-          <p>Dancer</p>
-        </div>
-        <div>
-          <p>Work experience <span>10 years</span></p>
-          <p>Teacher for <span>5 years</span></p>
-          <p>Style <span>HipHop</span></p>
-        </div>
-        <a class="button button-red" href="#">Let's start</a>
-      </div>
-    </div>
-  </ng-template>
-  <ng-template carouselSlide>
-    <div class="slide">
-      <div class="slide__image">
-        <img src="./assets/img/coach_3.jpg">
-      </div>
-      <div class="slide__content">
-        <div>
-          <h3>03</h3>
-          <h2>Ann Walker</h2>
-          <p>Dancer</p>
-        </div>
-        <div>
-          <p>Work experience <span>8 years</span></p>
-          <p>Teacher for <span>3 years</span></p>
-          <p>Style <span>Viennese Waltz, Salsa</span></p>
-        </div>
-        <a class="button button-red" href="#">Let's start</a>
-      </div>
-    </div>
-  </ng-template>
-  <ng-template carouselSlide>
-    <div class="slide">
-      <div class="slide__image">
-        <img src="./assets/img/coach_4.jpg">
-      </div>
-      <div class="slide__content">
-        <div>
-          <h3>04</h3>
-          <h2>Tom Wilspon</h2>
-          <p>Dancer</p>
-        </div>
-        <div>
-          <p>Work experience <span>10 years</span></p>
-          <p>Teacher for <span>5 years</span></p>
-          <p>Style <span>HipHop</span></p>
+          <p>Work experience <span>{{item.workExperience}} years</span></p>
+          <p>Teacher for <span>{{item.teachExperience}} years</span></p>
+          <p>Style <span>{{item.style.join(', ')}}</span></p>
         </div>
         <a class="button button-red" href="#">Let's start</a>
       </div>

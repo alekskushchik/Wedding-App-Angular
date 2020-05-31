@@ -1,45 +1,12 @@
 <div class="section">
-  <h2 class="section__title">What we offer</h2>
+  <h2 class="section__title">{{offersSection.meta.title}}</h2>
   <p class="section__description">
-    Our goal is not only to teach you how to dance but also give the best unforgettable memories about
-    preparing to your event
+   {{offersSection.meta.description}}
   </p>
-  <div class="offers">
-    <div class="offers__item">
-      <img src="./assets/icons/ico04.svg" alt="ico04">
-      <p>Talented Coaches</p>
-    </div>
-    <div class="offers__item">
-      <img src="./assets/icons/ico08.svg" alt="ico08">
-      <p>Cozy rooms for training</p>
-    </div>
-    <div class="offers__item">
-      <img src="./assets/icons/ico03.svg" alt="ico03">
-      <p>Coffee, tea, and cookies</p>
-    </div>
-    <div class="offers__item">
-      <img src="./assets/icons/ico07.svg" alt="ico07">
-      <p>Good physical form</p>
-    </div>
-    <div class="offers__item">
-      <img src="./assets/icons/ico06.svg" alt="ico06">
-      <p>Self Confidence and <br>
-        success on your event</p>
-    </div>
-    <div class="offers__item">
-      <img src="./assets/icons/ico02.svg" alt="ico02">
-      <p>Exciting emotions <br>
-        and a lot of fun</p>
-    </div>
-    <div class="offers__item">
-      <img src="./assets/icons/ico05.svg" alt="ico05">
-      <p>Great photos from <br>
-        your event</p>
-    </div>
-    <div class="offers__item">
-      <img src="./assets/icons/ico01.svg" alt="ico01">
-      <p>Spend hours together <br>
-        in happiness</p>
+  <div class="offers" >
+    <div class="offers__item" *ngFor="let item of items; index as i">
+      <img src="./assets/icons/ico0{{i+1}}.svg" alt="">
+      <p>{{item.title}}</p>
     </div>
   </div>
   <div class="slider-counter"></div></div>

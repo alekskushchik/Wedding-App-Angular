@@ -1,48 +1,12 @@
 <owl-carousel-o [options]="customOptions">
-  <ng-template carouselSlide>
+  <ng-template carouselSlide *ngFor="let item of items; index as i">
     <div class="slide">
-      <img src="./assets/img/image-1.jpg">
+      <img src="./assets/img/image-{{i+1}}.jpg">
       <div class="slide__content">
-        <h2>For Bride and Groom</h2>
+        <h2>{{item.title}}</h2>
         <a href="#">First Dance</a>
         <a href="#">Parent &amp; Child Dance</a>
       </div>
     </div>
   </ng-template>
-
-  <ng-template carouselSlide>
-    <div class="slide">
-      <img src="./assets/img/image-2.jpg">
-      <div class="slide__content">
-        <h2>For Guests</h2>
-        <a href="#">Groomsmen Dance</a>
-        <a href="#">Parent Dance</a>
-        <a href="#">Children’s Dance</a>
-      </div>
-    </div>
-  </ng-template>
-
-  <ng-template carouselSlide>
-    <div class="slide">
-      <img src="./assets/img/image-4.jpg">
-      <div class="slide__content">
-        <h2>Other events</h2>
-        <a href="#">First Dance</a>
-        <a href="#">Parent &amp; Child Dance</a>
-      </div>
-    </div>
-  </ng-template>
-
-  <ng-template carouselSlide>
-    <div class="slide">
-      <img src="./assets/img/image-3.jpg">
-      <div class="slide__content">
-        <h2>Other events</h2>
-        <a href="#">First Dance</a>
-        <a href="#">Parent &amp; Child Dance</a>
-      </div>
-
-    </div>
-  </ng-template>
-
 </owl-carousel-o>

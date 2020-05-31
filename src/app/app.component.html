@@ -1,8 +1,14 @@
-<app-header></app-header>
+<div *ngIf="!isLoading; else loading">
+  <app-header></app-header>
 
-<app-main></app-main>
+  <app-main></app-main>
 
-<app-footer></app-footer>
-
-<p *ngIf="!isLoading; else loading">{{sectionContent.title}}</p>
-<ng-template #loading>Loading...</ng-template>
+  <app-footer></app-footer>
+</div>
+  <ng-template #loading>
+    <div class="lds-ripple">
+      <div></div>
+      <div></div>
+      <p><strong>Loading...</strong></p>
+    </div>
+  </ng-template>
