@@ -4,4 +4,14 @@ body {
   font-family: Montserrat,sans-serif;
   font-size: 16px;
   font-weight: 400;
+  background: #001c2c;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+@import "scss/icons";
+@import "scss/nucleo";
+
+.form-control.ng-touched.ng-invalid {
+  border: 1px solid red;
 }

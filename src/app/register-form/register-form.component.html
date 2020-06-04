@@ -1,0 +1,54 @@
+<form #f="ngForm" (ngSubmit)="submit(f)">
+  <div class="form-group">
+    <label for="inputEmail">Email address</label>
+    <input
+      required="required"
+      minlength="15"
+      pattern="admin@gmail.com"
+      ngModel
+      name="inputEmail"
+      #inputEmail="ngModel"
+      id="inputEmail"
+      type="email"
+      class="form-control"
+      placeholder="">
+    <div class="alert alert-danger" *ngIf="!inputEmail.valid">
+      <div *ngIf="inputEmail.errors.required">
+        Email is required
+      </div>
+      <div *ngIf="inputEmail.errors.minlength">
+        Email address should be minimum {{ inputEmail.errors.minlength.requiredLength }} characters
+      </div>
+      <div *ngIf="inputEmail.errors.pattern">
+        Email address doesn't match the pattern
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword">Password</label>
+    <input
+      required="required"
+      minlength="8"
+      pattern="password"
+      ngModel
+      name="inputPassword"
+      #inputPassword="ngModel"
+      id="inputPassword"
+      type="password"
+      class="form-control"
+      placeholder="">
+    <div class="alert alert-danger" *ngIf="!inputPassword.valid">
+      <div *ngIf="inputPassword.errors.required">
+        Password is required
+      </div>
+      <div *ngIf="inputPassword.errors.minlength">
+        Password should be minimum {{ inputPassword.errors.minlength.requiredLength }} characters
+      </div>
+      <div *ngIf="inputPassword.errors.pattern">
+        Password doesn't match
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-xs btn-block btn-outline-success" [disabled]="!f.valid">Submit</button>
+  <button type="button" class="btn btn-xs btn-block btn-outline-danger" (click)="activeModal.close()">Cancel</button>
+</form>

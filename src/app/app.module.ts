@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -21,6 +22,9 @@ import { ServicesSliderComponent } from './main/services/services-slider/service
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import {GetDataService} from './services/get-data.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgbdModalComponent, NgbdModalContent} from "./modal.component";
+import { RegisterFormComponent } from './register-form/register-form.component';
 
 @NgModule({
   declarations: [
@@ -35,14 +39,19 @@ import {GetDataService} from './services/get-data.service';
     OffersComponent,
     CoachesComponent,
     CoachesSliderComponent,
-    ServicesSliderComponent
+    ServicesSliderComponent,
+    NgbdModalComponent,
+    NgbdModalContent,
+    RegisterFormComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    CarouselModule
+    CarouselModule,
+    NgbModule
   ],
   providers: [GetDataService],
   bootstrap: [AppComponent]

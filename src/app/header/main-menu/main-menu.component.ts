@@ -17,4 +17,5 @@ export class MainMenuComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
 }
