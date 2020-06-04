@@ -6,45 +6,45 @@
       minlength="15"
       pattern="admin@gmail.com"
       ngModel
-      name="inputEmail"
-      #inputEmail="ngModel"
+      name="email"
+      #email="ngModel"
       id="inputEmail"
       type="email"
       class="form-control"
       placeholder="">
-    <div class="alert alert-danger" *ngIf="!inputEmail.valid">
-      <div *ngIf="inputEmail.errors.required">
+    <div class="alert alert-danger" *ngIf="!email.valid">
+      <div *ngIf="email.errors.required">
         Email is required
       </div>
-      <div *ngIf="inputEmail.errors.minlength">
-        Email address should be minimum {{ inputEmail.errors.minlength.requiredLength }} characters
+      <div *ngIf="email.errors.minlength">
+        Email address should be minimum {{ email.errors.minlength.requiredLength }} characters
       </div>
-      <div *ngIf="inputEmail.errors.pattern">
+      <div *ngIf="email.errors.pattern">
         Email address doesn't match the pattern
       </div>
     </div>
   </div>
   <div class="form-group">
-    <label for="inputPassword">Password</label>
+    <label for="password">Password</label>
     <input
       required="required"
       minlength="8"
       pattern="password"
       ngModel
-      name="inputPassword"
-      #inputPassword="ngModel"
-      id="inputPassword"
+      name="password"
+      #password="ngModel"
+      id="password"
       type="password"
       class="form-control"
       placeholder="">
-    <div class="alert alert-danger" *ngIf="!inputPassword.valid">
-      <div *ngIf="inputPassword.errors.required">
+    <div class="alert alert-danger" *ngIf="!password.valid">
+      <div *ngIf="password.errors.required">
         Password is required
       </div>
-      <div *ngIf="inputPassword.errors.minlength">
-        Password should be minimum {{ inputPassword.errors.minlength.requiredLength }} characters
+      <div *ngIf="password.errors.minlength">
+        Password should be minimum {{ password.errors.minlength.requiredLength }} characters
       </div>
-      <div *ngIf="inputPassword.errors.pattern">
+      <div *ngIf="password.errors.pattern">
         Password doesn't match
       </div>
     </div>

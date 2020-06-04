@@ -8,8 +8,8 @@ export class PostDataService {
   constructor(private http: HttpClient) {}
 
   postData(f){
-    const body = {email: f.inputEmail, password: f.inputEmail};
-    console.log(f.inputEmail)
+    const body = {email: f.email, password: f.password};
+    console.log(f.email)
 
     return this.http.post(this.baseUrl, body);
   }
