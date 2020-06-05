@@ -1,54 +1,83 @@
-<form #f="ngForm" (ngSubmit)="submit(f)">
+<!--<form #f="ngForm" (ngSubmit)="submit(f)">-->
+<!--  <div class="form-group">-->
+<!--    <label for="inputEmail">Email address</label>-->
+<!--    <input-->
+<!--      required="required"-->
+<!--      minlength="15"-->
+<!--      pattern="admin@gmail.com"-->
+<!--      ngModel-->
+<!--      name="email"-->
+<!--      #email="ngModel"-->
+<!--      id="inputEmail"-->
+<!--      type="email"-->
+<!--      class="form-control"-->
+<!--      placeholder="">-->
+<!--    <div class="alert alert-danger" *ngIf="!email.valid">-->
+<!--      <div *ngIf="email.errors.required">-->
+<!--        Email is required-->
+<!--      </div>-->
+<!--      <div *ngIf="email.errors.minlength">-->
+<!--        Email address should be minimum {{ email.errors.minlength.requiredLength }} characters-->
+<!--      </div>-->
+<!--      <div *ngIf="email.errors.pattern">-->
+<!--        Email address doesn't match the pattern-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="form-group">-->
+<!--    <label for="password">Password</label>-->
+<!--    <input-->
+<!--      required="required"-->
+<!--      minlength="8"-->
+<!--      pattern="password"-->
+<!--      ngModel-->
+<!--      name="password"-->
+<!--      #password="ngModel"-->
+<!--      id="password"-->
+<!--      type="password"-->
+<!--      class="form-control"-->
+<!--      placeholder="">-->
+<!--    <div class="alert alert-danger" *ngIf="!password.valid">-->
+<!--      <div *ngIf="password.errors.required">-->
+<!--        Password is required-->
+<!--      </div>-->
+<!--      <div *ngIf="password.errors.minlength">-->
+<!--        Password should be minimum {{ password.errors.minlength.requiredLength }} characters-->
+<!--      </div>-->
+<!--      <div *ngIf="password.errors.pattern">-->
+<!--        Password doesn't match-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <button type="submit" class="btn btn-xs btn-block btn-outline-success" [disabled]="!f.valid">Submit</button>-->
+<!--  <button type="button" class="btn btn-xs btn-block btn-outline-danger" (click)="activeModal.close()">Cancel</button>-->
+<!--</form>-->
+
+<form [formGroup]="form">
   <div class="form-group">
-    <label for="inputEmail">Email address</label>
+    <label for="userEmail">Email</label>
     <input
-      required="required"
-      minlength="15"
-      pattern="admin@gmail.com"
-      ngModel
-      name="email"
-      #email="ngModel"
-      id="inputEmail"
-      type="email"
-      class="form-control"
-      placeholder="">
-    <div class="alert alert-danger" *ngIf="!email.valid">
-      <div *ngIf="email.errors.required">
-        Email is required
-      </div>
-      <div *ngIf="email.errors.minlength">
-        Email address should be minimum {{ email.errors.minlength.requiredLength }} characters
-      </div>
-      <div *ngIf="email.errors.pattern">
-        Email address doesn't match the pattern
-      </div>
+      formControlName="email"
+      id="userEmail"
+      type="text"
+      class="form-control">
+    <div *ngIf="email.touched && email.invalid" class="alert alert-danger">
+      Email is required
     </div>
   </div>
   <div class="form-group">
-    <label for="password">Password</label>
+    <label for="userPassword">Password</label>
     <input
-      required="required"
-      minlength="8"
-      pattern="password"
-      ngModel
-      name="password"
-      #password="ngModel"
-      id="password"
+      formControlName="password"
+      id="userPassword"
       type="password"
-      class="form-control"
-      placeholder="">
-    <div class="alert alert-danger" *ngIf="!password.valid">
-      <div *ngIf="password.errors.required">
-        Password is required
-      </div>
-      <div *ngIf="password.errors.minlength">
-        Password should be minimum {{ password.errors.minlength.requiredLength }} characters
-      </div>
-      <div *ngIf="password.errors.pattern">
-        Password doesn't match
-      </div>
+      class="form-control">
+    <div *ngIf="password.touched && password.invalid" class="alert alert-danger">
+      Password is required
     </div>
   </div>
-  <button type="submit" class="btn btn-xs btn-block btn-outline-success" [disabled]="!f.valid">Submit</button>
-  <button type="button" class="btn btn-xs btn-block btn-outline-danger" (click)="activeModal.close()">Cancel</button>
+  <div class="btn-group">
+    <button class="btn btn-success">Login</button>
+    <button class="btn btn-danger">Cancel</button>
+  </div>
 </form>

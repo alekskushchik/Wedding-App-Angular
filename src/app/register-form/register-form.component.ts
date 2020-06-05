@@ -1,38 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
-// import { FormGroup, FormControl, Validators } from "@angular/forms";
-import { User } from "../user";
-import { PostDataService } from "../services/post-data.service";
+import {FormGroup, FormControl, Validators} from '@angular/forms';
+
 
 @Component({
-  selector: 'register-form',
+  selector: 'app-register-form',
   templateUrl: './register-form.component.html',
-  providers: [PostDataService]
 })
+
 export class RegisterFormComponent implements OnInit {
+  form = new FormGroup({
+    email: new FormControl('', [Validators.email, Validators.required]),
+    password: new FormControl('', [Validators.required, Validators.minLength(8)])
+  });
 
-  user: User = new User();
-  form;
+  get email() {
+    return this.form.get('email');
+  }
 
-  constructor(public activeModal: NgbActiveModal, public postDataService: PostDataService) {}
+  get password() {
+    return this.form.get('password');
+  }
+
+  constructor() {}
 
   ngOnInit(): void {
   }
-
-  receivedUser: User;
-  done: boolean = false;
-
-  submit(f) {
-
-    this.activeModal.close();
-    this.postDataService.postData(f)
-      .subscribe(
-        (data: User) => {
-          this.receivedUser = data;
-          this.done = true;
-        },
-        error => console.log(error)
-      );
-  }
-
 }
