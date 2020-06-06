@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {GetDataService} from '../../services/get-data.service';
+import {DataService} from '../../services/data.service';
 
 @Component({
   selector: 'app-hero-section',
@@ -9,7 +9,7 @@ import {GetDataService} from '../../services/get-data.service';
 export class HeroSectionComponent implements OnInit {
 
  heroSection;
-  constructor(private getDataService: GetDataService) {
+  constructor(private getDataService: DataService) {
     this.heroSection = this.getDataService.heroSection;
   }
   ngOnInit() {

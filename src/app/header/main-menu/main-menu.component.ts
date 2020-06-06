@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {GetDataService} from '../../services/get-data.service';
+import {DataService} from '../../services/data.service';
 
 @Component({
   selector: 'app-main-menu',
@@ -10,7 +10,7 @@ export class MainMenuComponent implements OnInit {
   public navigationSection;
   public items;
 
-  constructor(private getDataService: GetDataService) {
+  constructor(private getDataService: DataService) {
     this.navigationSection = this.getDataService.navigationSection;
     this.items = this.navigationSection.content;
   }

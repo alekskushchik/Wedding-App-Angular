@@ -21,3 +21,12 @@ export interface SectionContent {
   title: string;
   url: string;
 }
+
+export interface UserToken {
+  access_token: string;
+}
+
+export interface LoginData {
+  email: string;
+  password: string;
+}

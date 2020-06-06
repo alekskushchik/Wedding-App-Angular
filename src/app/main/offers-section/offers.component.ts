@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {GetDataService} from '../../services/get-data.service';
+import {DataService} from '../../services/data.service';
 
 @Component({
   selector: 'app-offers',
@@ -9,7 +9,7 @@ import {GetDataService} from '../../services/get-data.service';
 export class OffersComponent implements OnInit {
   public offersSection;
   public items;
-  constructor(private getDataService: GetDataService) {
+  constructor(private getDataService: DataService) {
     this.offersSection = this.getDataService.offersSection;
     this.items = this.offersSection.content;
   }

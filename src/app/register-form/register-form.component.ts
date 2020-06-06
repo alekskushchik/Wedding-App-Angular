@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
+import {LoginData} from '../interfaces/interfaces';
+import {UserToken} from '../interfaces/interfaces';
+import {DataService} from '../services/data.service';
 
 
 @Component({
@@ -8,10 +11,7 @@ import {FormGroup, FormControl, Validators} from '@angular/forms';
 })
 
 export class RegisterFormComponent implements OnInit {
-  form = new FormGroup({
-    email: new FormControl('', [Validators.email, Validators.required]),
-    password: new FormControl('', [Validators.required, Validators.minLength(8)])
-  });
+  public form: FormGroup;
 
   get email() {
     return this.form.get('email');
@@ -21,8 +21,21 @@ export class RegisterFormComponent implements OnInit {
     return this.form.get('password');
   }
 
-  constructor() {}
+  constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
+    this.form = new FormGroup({
+      email: new FormControl('', [Validators.email, Validators.required]),
+      password: new FormControl('', [Validators.required, Validators.minLength(8)])
+    });
+  }
+
+  submit() {
+    const formData = this.form.value as LoginData;
+    this.form.reset();
+    this.dataService.userLogin(formData)
+      .subscribe((token: UserToken) => {
+      localStorage.setItem('user-token', JSON.stringify(token));
+    });
   }
 }

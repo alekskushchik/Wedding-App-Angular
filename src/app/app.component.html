@@ -5,10 +5,15 @@
 
   <app-footer></app-footer>
 </div>
-  <ng-template #loading>
-    <div class="lds-ripple">
-      <div></div>
-      <div></div>
-      <p><strong>Loading...</strong></p>
+<ng-template #loading>
+  <div class="spinner-box">
+    <div class="pulse-container">
+      <div class="pulse-bubble pulse-bubble-1"></div>
+      <div class="pulse-bubble pulse-bubble-2"></div>
+      <div class="pulse-bubble pulse-bubble-3"></div>
     </div>
-  </ng-template>
+    <div>
+      <h3>Loading...</h3>
+    </div>
+  </div>
+</ng-template>

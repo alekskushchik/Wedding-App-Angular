@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { GetDataService } from "../../../services/get-data.service";
+import { DataService } from "../../../services/data.service";
 
 @Component({
   selector: 'app-coaches-slider',
@@ -37,7 +37,7 @@ export class CoachesSliderComponent implements OnInit {
     nav: false
   };
 
-  constructor(private getDataService: GetDataService) {
+  constructor(private getDataService: DataService) {
     this.coachesSection = this.getDataService.coachesSection;
     this.items = this.coachesSection.content;
     this.length = this.coachesSection.content.length
