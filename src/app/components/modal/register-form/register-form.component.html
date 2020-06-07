@@ -1,0 +1,37 @@
+<form [formGroup]="form">
+  <div class="form-group">
+    <label for="userEmail">Email</label>
+    <input
+      formControlName="email"
+      id="userEmail"
+      type="text"
+      class="form-control">
+    <div *ngIf="email.invalid && email.touched" class="alert alert-danger mt-2">
+      <small *ngIf="email.errors.required">
+        Email is required.
+      </small>
+      <small *ngIf="email.errors.email">
+        Enter proper email.
+      </small>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="userPassword">Password</label>
+    <input
+      formControlName="password"
+      id="userPassword"
+      type="password"
+      class="form-control">
+    <div *ngIf="password.invalid && email.touched" class="alert alert-danger mt-2">
+      <small *ngIf="password.errors.required">
+        Password is required.
+      </small>
+      <small *ngIf="password.errors.minlength">
+        Password length should be {{password.errors.minlength.requiredLength}} characters.<br>
+        Now password length is {{password.errors.minlength.actualLength}} characters.
+      </small>
+    </div>
+  </div>
+    <button type="submit" class="btn btn-block btn-outline-success" [disabled]="form.invalid" (click)="submit()">Login</button>
+    <button type="button" class="btn btn-block btn-outline-danger" (click)="activeModal.close()">Cancel</button>
+</form>

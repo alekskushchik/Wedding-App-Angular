@@ -1,20 +1,5 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Montserrat,sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  background: #001c2c;
-}
-
 /* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
-@import "scss/icons";
-@import "scss/nucleo";
+@import "~bootstrap/scss/bootstrap";
 
-.form-control.ng-touched.ng-invalid {
-  border-left: 2px solid red;
-}
-.form-control.ng-touched.ng-valid {
-  border-left: 2px solid green;
-}
+// regular style toast
+@import "assets/toastr.css";

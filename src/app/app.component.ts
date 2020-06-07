@@ -1,8 +1,8 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
-import {DataService} from './services/data.service';
+import {HttpService} from './shared/http.service';
 import {Subscription} from 'rxjs';
-import {SectionData} from './interfaces/interfaces';
-import {Section} from './interfaces/interfaces';
+import {SectionData} from './shared/interfaces';
+import {Section} from './shared/interfaces';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +20,7 @@ export class AppComponent implements OnInit, OnDestroy {
   public servicesSection: Section;
   public coachesSection: Section;
 
-  constructor(private getDataService: DataService) {
+  constructor(private getDataService: HttpService) {
   }
 
   ngOnInit(): void {
