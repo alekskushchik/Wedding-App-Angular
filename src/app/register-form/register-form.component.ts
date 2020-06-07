@@ -3,6 +3,7 @@ import {FormGroup, FormControl, Validators} from '@angular/forms';
 import {LoginData} from '../interfaces/interfaces';
 import {UserToken} from '../interfaces/interfaces';
 import {DataService} from '../services/data.service';
+import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -21,21 +22,27 @@ export class RegisterFormComponent implements OnInit {
     return this.form.get('password');
   }
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService, public activeModal: NgbActiveModal) {}
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      email: new FormControl('', [Validators.email, Validators.required]),
-      password: new FormControl('', [Validators.required, Validators.minLength(8)])
+      email: new FormControl('', [
+        Validators.email, Validators.required
+      ]),
+      password: new FormControl('', [
+        Validators.required, Validators.minLength(8)
+      ])
     });
   }
 
   submit() {
     const formData = this.form.value as LoginData;
+    console.log(formData);
     this.form.reset();
     this.dataService.userLogin(formData)
       .subscribe((token: UserToken) => {
-      localStorage.setItem('user-token', JSON.stringify(token));
+      this.dataService.updateToken(token);
+      this.activeModal.close();
     });
   }
 }

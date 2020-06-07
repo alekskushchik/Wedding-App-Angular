@@ -3,7 +3,6 @@ import {DataService} from './services/data.service';
 import {Subscription} from 'rxjs';
 import {SectionData} from './interfaces/interfaces';
 import {Section} from './interfaces/interfaces';
-import {delay} from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -35,9 +34,9 @@ export class AppComponent implements OnInit, OnDestroy {
   getSection(): void {
     this.isLoading = true;
     this.sectionSub = <Subscription> this.getDataService.getSectionsData()
-      .pipe(delay(3000))
       .subscribe((data: SectionData) => {
         this.sectionData = data;
+        console.log(data);
         this.sectionArr = data.content;
         this.getDataService.navigationSection = this.navigationSection = this.sectionArr.find(el => el.type === 'navigation');
         this.getDataService.heroSection = this.heroSection = this.sectionArr.find(el => el.type === 'info');

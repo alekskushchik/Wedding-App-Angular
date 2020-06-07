@@ -23,6 +23,7 @@
     "@angular/router": "~9.1.7",
     "@fortawesome/angular-fontawesome": "^0.6.1",
     "@ng-bootstrap/ng-bootstrap": "^6.1.0",
+    "angular-epic-spinners": "^2.0.0",
     "bootstrap": "^4.4.0",
     "ngx-owl-carousel-o": "^3.0.1",
     "node-sass": "^4.14.1",

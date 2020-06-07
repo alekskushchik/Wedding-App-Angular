@@ -13,8 +13,8 @@ body {
 @import "scss/nucleo";
 
 .form-control.ng-touched.ng-invalid {
-  border-left: 4px solid red;
+  border-left: 2px solid red;
 }
 .form-control.ng-touched.ng-valid {
-  border-left: 4px solid green;
+  border-left: 2px solid green;
 }

@@ -1,9 +1,15 @@
 <div class="hero-section">
   <div class="hero-section__intro">
-    <h1>{{heroSection.meta.title}}</h1>
-    <h4>{{heroSection.meta.location}}</h4>
-    <p>{{heroSection.meta.description}}</p>
-    <a href="{{heroSection.action.url}}" class="button button-red">{{heroSection.action.title}}</a>
+    <h1 *ngIf="token == null">{{heroSection.meta.title}}</h1>
+    <textarea *ngIf="token != null" type="text"  class="texarea h1" [(ngModel)]="heroSection.meta.title" value="{{ heroSection.meta.title}}"></textarea>
+    <h4 *ngIf="token == null">{{heroSection.meta.location}}</h4>
+    <textarea *ngIf="token != null" type="text" class="texarea h4" [(ngModel)]="heroSection.meta.location" value="{{ heroSection.meta.location}}"></textarea>
+    <p *ngIf="token == null">{{heroSection.meta.description}}</p>
+    <textarea *ngIf="token != null" type="text" class="texarea p" [(ngModel)]="heroSection.meta.description" value="{{ heroSection.meta.description}}"></textarea>
+    <div>
+      <a href="{{heroSection.action.url}}" class="button button-red">{{heroSection.action.title}}</a>
+      <button *ngIf="token != null" class="btn btn-lg btn-outline-primary mx-4" (click)="update()">Edit</button>
+    </div>
   </div>
   <div class="hero-section__image">
     <img src="./assets/img{{heroSection.meta.heroImage}}" alt="">

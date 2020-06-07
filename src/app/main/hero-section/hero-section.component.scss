@@ -32,6 +32,27 @@
       font-weight: 500;
     }
 
+    textarea {
+      border: none;
+      resize: none;
+      border-bottom: 2px solid blue;
+      width: 100%;
+
+      &.h1 {
+
+      }
+
+      &.h4 {
+
+      }
+
+      &.p {
+        height: -webkit-fill-available;
+        max-height: 200px;
+        min-height: 50px;
+      }
+    }
+
     .button {
       display: inline-table;
       width: fit-content;

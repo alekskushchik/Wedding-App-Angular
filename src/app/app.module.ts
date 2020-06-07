@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core';
 
 import {FormsModule} from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
 import {AppComponent} from './app.component';
 
@@ -24,6 +24,8 @@ import {DataService} from './services/data.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgbdModalComponent, NgbdModalContent} from './modal.component';
 import {RegisterFormComponent} from './register-form/register-form.component';
+import {AuthenticationInterceptor} from './interceptor/interceptor';
+import {AtomSpinnerModule, OrbitSpinnerModule} from 'angular-epic-spinners';
 
 @NgModule({
   declarations: [
@@ -49,9 +51,18 @@ import {RegisterFormComponent} from './register-form/register-form.component';
     HttpClientModule,
     BrowserAnimationsModule,
     CarouselModule,
-    NgbModule
+    NgbModule,
+    AtomSpinnerModule,
+    OrbitSpinnerModule
   ],
-  providers: [DataService],
+  providers: [
+    DataService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthenticationInterceptor,
+      multi: true
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
