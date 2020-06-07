@@ -4,7 +4,7 @@ import {BehaviorSubject, Observable} from 'rxjs';
 import {SectionData} from './interfaces';
 import {LoginData} from './interfaces';
 import {UserToken} from './interfaces';
-import { ToastrService } from 'ngx-toastr';
+import {ToastrService} from 'ngx-toastr';
 
 import {delay} from 'rxjs/operators';
 
@@ -20,11 +20,12 @@ export class HttpService {
   public servicesSection;
   public coachesSection;
 
-  constructor(private httpClient: HttpClient, private toastr: ToastrService) {}
+  constructor(private httpClient: HttpClient, private toastr: ToastrService) {
+  }
 
   public getSectionsData(): Observable<SectionData> {
     return this.httpClient.get<SectionData>(`${this.baseUrl}/app/api/v1/section`)
-      .pipe(delay(500));
+      .pipe(delay(1500));
   }
 
   public userLogin(loginData: LoginData): Observable<UserToken> {
@@ -32,18 +33,16 @@ export class HttpService {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json; charset=utf-8'
     });
-    // this.showSuccess();
     return this.httpClient.post<UserToken>(`${this.baseUrl}/app/api/v1/user/login`, body, {
       headers, responseType: 'json'
     });
   }
 
-
-
-  showInfo(){
+  showInfo() {
     this.toastr.show('', 'You\'ve just log out from the edit mode.', {
       easing: 'ease-in',
-      easeTime: 500
+      easeTime: 500,
+      timeOut: 2000
     });
   }
 

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {HttpService} from '../../../shared/http.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-hero-section',
@@ -13,12 +14,18 @@ export class HeroSectionComponent implements OnInit {
   heroSection;
   readonly baseUrl: string = 'https://us-central1-cms-edu-2020-api.cloudfunctions.net';
 
-  constructor(private dataService: HttpService, private httpClient: HttpClient) {
+  constructor(private dataService: HttpService, private httpClient: HttpClient, private toastr: ToastrService) {
     this.heroSection = this.dataService.heroSection;
   }
 
   ngOnInit() {
     this.dataService.token.subscribe(token => this.token = token);
+  }
+
+  showWarning() {
+    this.toastr.show('', 'You\'ve just edited section.', {
+      timeOut: 2000
+    });
   }
 
   update() {
@@ -28,6 +35,6 @@ export class HeroSectionComponent implements OnInit {
       .subscribe((res) => {
         console.log(res);
       });
-
+    this.showWarning();
   }
 }

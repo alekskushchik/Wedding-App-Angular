@@ -52,7 +52,8 @@ export class RegisterFormComponent implements OnInit {
   showSuccess() {
     this.toastr.success('', 'You\'ve just authorized to the app in edit mode. Have fun!', {
       easing: 'ease-in',
-      easeTime: 500
+      easeTime: 500,
+      timeOut: 2000
     });
   }
 }

@@ -37,7 +37,7 @@ export class NgbdModalComponent implements OnInit {
 
   token: any;
 
-  constructor(private modalService: NgbModal, private dataService: HttpService ) {
+  constructor(private modalService: NgbModal, private dataService: HttpService) {
   }
 
 
